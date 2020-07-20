@@ -1,6 +1,8 @@
 import numpy as np  
 import pandas as pd 
-from datetime import datetime  
+from datetime import datetime 
+import matplotlib.pyplot as plt 
+import scipy.stats as stats
 
 
 class SecurityCleaning:
@@ -25,14 +27,26 @@ class SecurityCleaning:
     def write_to_csv(self, location):
         self.df.to_csv(location)
 
+    def create_delta_column(self):
+        self.df['prev_close'] = self.df['close'].shift(periods=1)
+        self.df['prev_close'].fillna(self.df['close'], inplace=True)
+
+        self.df['$_change'] = self.df['open'] - self.df['prev_close']
+        self.df['%_change'] = self.df['$_change']/self.df['prev_close'] * 100
+
+    
 
 if __name__ == "__main__":
     spy = SecurityCleaning('SPY', '../data/spy_1d_data.csv')
     spy.remove_na_cols()
     spy.rename_columns()
     spy.date_format()
-    print(spy.name)
+    
+    spy.create_delta_column()
+
     print(spy.df.head())
+   
+
 
     location = r'../data/joined_data.csv'
     spy.write_to_csv(location)
