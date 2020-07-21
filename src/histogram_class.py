@@ -79,29 +79,29 @@ if __name__ == '__main__':
     # two_plus = HistogramPlot('great_than_975', df_pos)
     # two_plus.plot_data('%_change', 'Distribution for The Percent of Change, Greater Than 2%', 0)
     
-    # df_neg = initial[m_neg]
-    # less_two = HistogramPlot('less_than_025', df_neg)
-    # less_two.plot_data('%_change', 'Distribution for The Percent of Change, Less Than -2%', 0)
+    df_neg = initial[m_neg]
+    less_two = HistogramPlot('less_than_025', df_neg)
+    less_two.plot_data('%_change', 'Distribution for The Percent of Change, Less Than -2%', 0)
     
 
-    # spxl = pd.read_csv('../data/spxl_clean.csv')
-    # spxl_initial = HistogramPlot('full_spxl', spxl)
-    # # spxl_initial.plot_data('%_change', "SPXL Distribution Daily Percent of Change, All Samples", 1)
+    spxl = pd.read_csv('../data/spxl_clean.csv')
+    spxl_initial = HistogramPlot('full_spxl', spxl)
+    spxl_initial.plot_data('%_change', "SPXL Distribution Daily Percent of Change, All Samples", 1)
 
-    # spxl_high = 3.64
-    # spxl_low = -3.43
+    spxl_high = 3.64
+    spxl_low = -3.43
 
-    # mask_pos = spxl['%_change'] >= spxl_high
-    # mask_neg = spxl['%_change'] <= spxl_low
+    mask_pos = spxl['%_change'] >= spxl_high
+    mask_neg = spxl['%_change'] <= spxl_low
 
-    # spxl_pos = spxl[mask_pos]
-    # spxl_neg = spxl[mask_neg]
+    spxl_pos = spxl[mask_pos]
+    spxl_neg = spxl[mask_neg]
 
-    # print(len(spxl_pos)+len(spxl_neg))
-    # # spxl_g95 = HistogramPlot('spxl_gt_3.64%', spxl_pos)
-    # # spxl_g95.plot_data('%_change', 'Distribution For The Percent of Change, Greater Than 3.64%', 0)
+    #print(len(spxl_pos)+len(spxl_neg))
+    spxl_g95 = HistogramPlot('spxl_gt_3.64%', spxl_pos)
+    spxl_g95.plot_data('%_change', 'Distribution For The Percent of Change, Greater Than 3.64%', 0)
 
-    # # spxl_l05 = HistogramPlot('spxl_lt_n3.43%', spxl_neg)
-    # # spxl_l05.plot_data('%_change', 'Distribution For The Percent of Change, Less Than -3.43%', 0)
+    spxl_l05 = HistogramPlot('spxl_lt_n3.43%', spxl_neg)
+    spxl_l05.plot_data('%_change', 'Distribution For The Percent of Change, Less Than -3.43%', 0)
 
     

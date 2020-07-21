@@ -1,5 +1,5 @@
 # <div align="center">_**Can we improve a trader's win-ratio through EDA?**_</div>
-## <div align="center">_**Lawrence C. Williams - Capston Project I - July 24, 2020**_</div>
+## <div align="center">_**Lawrence C. Williams - Capstone Project I - July 24, 2020**_</div>
 
 ![header image](https://github.com/chuck1l/capstone_one/blob/master/img/header.png)
 
@@ -46,6 +46,11 @@ Initially viewing daily market conditions including the following:
 
 ## _**Selecting The Days of Interest**_ 
 
-I first created three new columns in my dataframe. The prior day's closing price, change in U.S. dollars (next day open minus prior day close), and finally the percent of change for the two sequential days.  I began this analysis with an assumption that a plus or minus 3% gap, from prior day close to next day open, would be the earmark threshold for my definition of a precipitous change. Upon further analysis I discovered that 90% of the data lies within two points; lower: -3.43% upper: 3.64%. I want to focus my EDA on the extremes I now consider to the left of -3.43% and to the right of 3.64%, totaling 171 events over the almost 11 years. I will be looking at the day leading up to each event and the day following.
+I first created three new columns in my dataframe. The prior day's closing price, change in U.S. dollars (next day open minus prior day close), and finally the percent of change for the two sequential days.  I began this analysis with an assumption that a plus or minus 3% gap, from prior day close to next day open, would be the earmark threshold for my definition of a precipitous change. Upon further analysis I discovered that 90% of the data lies within two points; lower: -3.43% upper: 3.64%. I want to focus my EDA on the extremes that I now consider to the left of -3.43% and to the right of 3.64%, totaling 171 events over the almost 11 years. Ongoing analysis will include 10 minute intervals for the trade-day leading up to each event through the close of the trade-day following.
 
 ![Graph full spxl data](https://github.com/chuck1l/capstone_one/blob/master/img/full_spxl.png)
+
+#### _**The Initial View of These Two Data Sets**_
+
+![Graph Less Than -3.43%](https://github.com/chuck1l/capstone_one/blob/master/img/spxl_lt_n3.43%25.png)
+![Graph Greater Than 3.64%](https://github.com/chuck1l/capstone_one/blob/master/img/spxl_gt_3.64%25.png)
