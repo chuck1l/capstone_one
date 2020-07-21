@@ -1,9 +1,9 @@
 # <div align="center">_**Can we improve a trader's win-ratio through EDA?**_</div>
 ## _**Lawrence C. Williams - Capston Project I - July 24, 2020**_
 
-<div style="width:50%">![Stock Image](https://github.com/chuck1l/capstone_one/blob/master/img/header.png "stock market image")</div>
+<img src="https://github.com/chuck1l/capstone_one/blob/master/img/header.png"  width="50%">
 
-## _**Introduction:_**
+## _**Introduction:**_
 
 An effective trading strategy is essential in attempting to sustain a living as a retail trader. It is without a doubt challenging, but exciting at the same time. The most consistent way to avoid becoming an all too familiar statistical loser in the stock market includes a necessary combination of advanced strategy, risk management, discipline, money management, emotional intelligence and the proper computational tools. In the end, the trader's success depends on the proven, straight forward strategy that is flexible enough to be effective for any security that meets the criteria.
 
