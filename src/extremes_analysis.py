@@ -41,7 +41,7 @@ class ThreeDayEvents(object):
 
 if __name__ == "__main__":
 
-    data = '../data/spxl_clean.csv'
+    data = '../data/prev_data/spxl_clean.csv'
     spxl = ThreeDayEvents('spxl', data)
     spxl.create_new_cols()
     spxl.remove_extra_cols()
@@ -56,7 +56,11 @@ if __name__ == "__main__":
     df_events_pos = spxl.df[spxl_mask_pos]
     df_events_neg = spxl.df[spxl_mask_neg]
 
-    print(df_events_neg.info())
+    location = r'../data/df_gt_3.64.csv'
+    df_events_pos.to_csv(location)
+
+    location = r'../data/df_lt_n3.43.csv'
+    df_events_neg.to_csv(location)
 
     
     
