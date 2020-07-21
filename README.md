@@ -1,7 +1,7 @@
 # <div align="center">_**Can we improve a trader's win-ratio through EDA?**_</div>
 ## _**Lawrence C. Williams - Capston Project I - July 24, 2020**_
 
-<img src="https://github.com/chuck1l/capstone_one/blob/master/img/header.png"  width="50%">
+<img src="https://github.com/chuck1l/capstone_one/blob/master/img/header.png"  height="50%">
 
 ## _**Introduction:**_
 
