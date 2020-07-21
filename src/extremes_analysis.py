@@ -16,8 +16,8 @@ class ThreeDayEvents(object):
         open_p = self.df['open']
         close_p = self.df['close']
         hofd = self.df['high']
-        self.df['day_o_c_delta%'] = (close_p - open_p) / open_p
-        self.df['hofd_o_delta%'] = (hofd - open_p) / open_p
+        self.df['day_o_c_delta%'] = ((close_p - open_p) / open_p) * 100
+        self.df['hofd_o_delta%'] = ((hofd - open_p) / open_p) * 100
 
 
     def remove_extra_cols(self):
