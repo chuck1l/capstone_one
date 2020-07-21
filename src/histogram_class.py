@@ -9,6 +9,9 @@ class HistogramPlot:
         self.name = name
         self.df = data
 
+    # Plotting the data to identify the upper and lower 5% of the data
+    # What I'm considering the extremes
+    # Including a toggle switch to plot the two %5 extremes without pdf
     def plot_data(self, col, title, toggle=1):
         minimum = min(self.df[col])
         maximum = max(self.df[col])
@@ -43,40 +46,60 @@ class HistogramPlot:
             ax.plot(t, percent_change_model.pdf(t), linewidth=2, color='black',
                     label='Normal PDF with sample mean and std')
 
-            time_025 = percent_change_model.ppf(0.025)
-            time_975 = percent_change_model.ppf(0.975)
-            ax.axvline(time_025, color='red', linestyle='--', linewidth=1,
-                label=f'Lower 2.5%: {round(time_025, 2)}%')
-            ax.axvline(time_975, color='red', linestyle='--', linewidth=1,
-                label=f'Upper 2.5%: {round(time_975, 2)}%')
+            time_05 = percent_change_model.ppf(0.05)
+            time_95 = percent_change_model.ppf(0.95)
+            ax.axvline(time_05, color='red', linestyle='--', linewidth=1,
+                label=f'Lower 5%: {round(time_05, 2)}%')
+            ax.axvline(time_95, color='red', linestyle='--', linewidth=1,
+                label=f'Upper 5%: {round(time_95, 2)}%')
             
 
         ax.legend(loc='best')
         plt.tight_layout()
-        plt.savefig(f'../img/{self.name}')
+        #plt.savefig(f'../img/{self.name}.png')
+        #plt.show()
+
         
         
 
 
 if __name__ == '__main__':
 
-    initial = pd.read_csv('../data/joined_data.csv')
-    initial_graph = HistogramPlot('full_data', initial)
-    initial_graph.plot_data('%_change', 'Distribution for The Daily Percent of Change, All Samples', 1)
+    # initial = pd.read_csv('../data/joined_data.csv')
+    # initial_graph = HistogramPlot('full_data', initial)
+    # initial_graph.plot_data('%_change', 'Distribution for The Daily Percent of Change, All Samples', 1)
     
-    high = 1.31
-    low = -1.38
+    # high = 1.31
+    # low = -1.38
 
-    m_pos = initial['%_change'] >= high
-    m_neg = initial['%_change'] <= low 
+    # m_pos = initial['%_change'] >= high
+    # m_neg = initial['%_change'] <= low 
     
-    df_pos = initial[m_pos]
-    two_plus = HistogramPlot('great_than_975', df_pos)
-    two_plus.plot_data('%_change', 'Distribution for The Percent of Change, Greater Than 2%', 0)
+    # df_pos = initial[m_pos]
+    # two_plus = HistogramPlot('great_than_975', df_pos)
+    # two_plus.plot_data('%_change', 'Distribution for The Percent of Change, Greater Than 2%', 0)
     
-    df_neg = initial[m_neg]
-    less_two = HistogramPlot('less_than_025', df_neg)
-    less_two.plot_data('%_change', 'Distribution for The Percent of Change, Less Than -2%', 0)
+    # df_neg = initial[m_neg]
+    # less_two = HistogramPlot('less_than_025', df_neg)
+    # less_two.plot_data('%_change', 'Distribution for The Percent of Change, Less Than -2%', 0)
     
+
+    # spxl = pd.read_csv('../data/spxl_clean.csv')
+    # spxl_initial = HistogramPlot('full_spxl', spxl)
+    # spxl_initial.plot_data('%_change', "SPXL Distribution Daily Percent of Change, All Samples", 1)
+
+    # spxl_high = 3.64
+    # spxl_low = -3.43
+
+    # mask_pos = spxl['%_change'] >= spxl_high
+    # mask_neg = spxl['%_change'] <= spxl_low
+
+    # spxl_pos = spxl[mask_pos]
+    # spxl_neg = spxl[mask_neg]
+    # spxl_g95 = HistogramPlot('spxl_gt_3.64%', spxl_pos)
+    # spxl_g95.plot_data('%_change', 'Distribution For The Percent of Change, Greater Than 3.64%', 0)
+
+    # spxl_l05 = HistogramPlot('spxl_lt_n3.43%', spxl_neg)
+    # spxl_l05.plot_data('%_change', 'Distribution For The Percent of Change, Less Than -3.43%', 0)
 
     

@@ -10,6 +10,7 @@ class SecurityCleaning:
     # Removing the multiple columns pulled in with all-null values
     def remove_na_cols(self):
         self.df.dropna(axis='columns', inplace=True)
+       
 
     # Cleaning the columns by removing the blank space, and lowercasing
     # Changing column names to be more clear representation
@@ -17,8 +18,8 @@ class SecurityCleaning:
         self.df.columns = self.df.columns.str.replace(' ', '_')
         self.df.columns = map(str.lower, self.df.columns)
 
-        self.df.rename(columns={'time': 'date', 'plot.2': '200_ma', 
-            'plot.3': '100_ma', 'plot.4': '20_ema'}, inplace=True)
+        self.df.rename(columns={'time': 'date', 'ma.1': '200_ma', 
+            'ma.3': '100_ma', 'ma.2': '20_ema', 'plot': 'relative_vol'}, inplace=True)
 
     # Changing the date column from unix time base to datetime
     def date_format(self):
@@ -39,12 +40,22 @@ class SecurityCleaning:
     
 
 if __name__ == "__main__":
-    spy = SecurityCleaning('SPY', '../data/spy_1d_data.csv')
-    spy.remove_na_cols()
-    spy.rename_columns()
-    spy.date_format()
+    # spy = SecurityCleaning('SPY', '../data/spy_1d_data.csv')
+    # spy.remove_na_cols()
+    # spy.rename_columns()
+    # spy.date_format()
     
-    spy.create_delta_column()
+    # spy.create_delta_column()
    
-    location = r'../data/joined_data.csv'
-    spy.write_to_csv(location)
+    # location = r'../data/joined_data.csv'
+    # spy.write_to_csv(location)
+
+    # spxl = SecurityCleaning('spxl', '../data/spxl_raw.csv')
+    # spxl.rename_columns()
+    # spxl.df = spxl.df[199:]
+    # spxl.remove_na_cols()
+    # spxl.date_format()
+    # spxl.create_delta_column()
+    
+    # location = r'../data/spxl_clean.csv'
+    # spxl.write_to_csv(location)
