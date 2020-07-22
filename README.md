@@ -44,7 +44,7 @@ Initially viewing daily market conditions including the following:
 
 [**TradingView - market data provided by ICE Data Services**](https://www.tradingview.com/)
 
-## _**Selecting The Days of Interest**_ 
+## _**Selecting The Days of Interest:**_ 
 
 I first created three new columns in my dataframe. The prior day's closing price, change in U.S. dollars (next day open minus prior day close), and finally the percent of change for the two sequential days.  I began this analysis with an assumption that a plus or minus 3% gap, from prior day close to next day open, would be the earmark threshold for my definition of a precipitous change. Upon further analysis I discovered that 90% of the data lies within two points; lower: -3.43% upper: 3.64%. I want to focus my EDA on the extremes that I now consider to the left of -3.43% and to the right of 3.64%, totaling 171 events over the almost 11 years. Ongoing analysis will include 10 minute intervals for the trade-day leading up to each event through the close of the trade-day following.
 
@@ -90,8 +90,20 @@ Minimum account size for a day trader, using a broker based in the United States
 * $25,000 @ $48/share = ~ 520 shares of $SPXL
 * 3% increase is $1.44 / share
 * $1.44 x 520 shares = $749 profit for the day  
-* Identifying 2 or 3 trades per week could return $80,000 to $120,000 yearly if you only hit the 3% mark
+* Identifying 2 or 3 trades per week could return $80,000 to $120,000 yearly if you average the 3% mark
 * Maximize profits, don't stop at 3% if the momentum is still in your favor
+* Minimize losses when the trade doesn't go as planned
 * Remember that is minimum account size, 3% was only the average, could be much larger
 * Double or triple conservatively
 
+The EDA up to this point has raised new questions to further analyze:
+* What does daily action look like when not impacted with a catalyzing event?
+* Why enter a position at the open price?
+* What would the return look like **High of Day** versus **Low of Day**?
+* Can we identify a repeatable method of entering a position closer to the **Low of Day**?
+* Does the **Low of Day** and **High of Day** repeat at a certain time of the day?
+* Could volume metrics preceed price movement to forecast the future action?
+
+## _**The Answers:**_
+
+### _**Daily Action Without A Catalyzing Driving Volatility**_
