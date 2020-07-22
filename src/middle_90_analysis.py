@@ -82,7 +82,7 @@ class HistogramMiddleNinety():
 
         ax.legend(loc='upper right')
         plt.tight_layout()
-        plt.savefig(f'../img/{self.name}.png')
+        #plt.savefig(f'../img/{self.name}.png')
         plt.show()
 
 
@@ -102,12 +102,12 @@ if __name__ == "__main__":
     data_reduced_pos_45 = spxl_mid_90.df[mask_pos]
     data_reduced_neg_45 = spxl_mid_90.df[mask_neg]
 
-    graph_pos_45 = HistogramMiddleNinety('graph_pos_45_hofd_op', data_reduced_pos_45)
+    # graph_pos_45 = HistogramMiddleNinety('graph_pos_45_hofd_op', data_reduced_pos_45)
 
-    title = 'Comparing Price Change High of Day vs. Open For Non-Catalyst Days'
-    col_pos = 'hofd_o_delta%'
+    # title = 'Comparing Price Change High of Day vs. Open For Non-Catalyst Days'
+    # col_pos = 'hofd_o_delta%'
 
-    graph_pos_45.plot_data(title, col_pos)
+    # graph_pos_45.plot_data(title, col_pos)
 
 
 
