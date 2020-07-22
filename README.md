@@ -57,21 +57,41 @@ We don't gain much insight from this view, just noticing the frequency of events
 ![Graph Less Than -3.43%](https://github.com/chuck1l/capstone_one/blob/master/img/spxl_lt_n3.43%25.png)
 ![Graph Greater Than 3.64%](https://github.com/chuck1l/capstone_one/blob/master/img/spxl_gt_3.64%25.png)
 
-As human nature tends to lead us, lets focus on the positive events first.  Those days that had a catalyzing event leading to greater than or equal to a **3.64% overnight gap** (due to after hours and futures trading).
+As human nature tends to lead us, we focus on the positive events first.  Those days that had a catalyzing event leading to greater than or equal to a **3.64% overnight gap** (due to after hours and futures trading).
 
-At first glance, we looked at the percent of change from the open mark versus the closing - for 3 days. The day before the event, day of the event, and then the day after the event. **($ close - $ open) / $ open** 
+At first glance, we looked at the percent of change from the open mark versus the closing - for 3 days. The day before the event, day of the event, and then the day after the event. 
+
+**($Close - $Open) / $Open x 100** 
 
 ![Graph $close vs $open](https://github.com/chuck1l/capstone_one/blob/master/img/graph_%25_op_clo.png)
 
-This graph tells me very important information. Remembering that I am looking to be right more than 50% of the time, there is another caveat, the move must be substantial enough for decent profit on that correctnes. Learning: If I hold a position from open to close.
-1. The day before has an average of negative price change.
-    * Thats okay, we can't see the future.
-    * Seeing an almost even split between positive and negative action suggests people acting on impending catalyst evenly.
+This graph tells me very important information. Remembering that I am looking to be right more than 50% of the time, there is another caveat, the move must be substantial enough for decent profit on that correctness. Learning: If I hold a position from open to close.
+* The day before has an average of negative price change.
+    * That's okay, we can't see the future.
+    * Seeing an almost even split between positive and negative action suggests people acting on impending catalysts evenly.
     * Some are right, some are wrong
-2. Holding the day of would produce a win on average.
+* Holding the day of the event would produce a win on average.
     * Between 0.7% and 13.6% gain over half of the time.
-    * Acceptable, but we can do better
+    * Acceptable, but I hypothesize that we can do better
     * With a mean of 0.7% we are very close to 0% gain or loss, stop losses are paramount
-3. The day after seems to pull back over 50% of the time.
+* The day after seems to pull back over 50% of the time.
     * Risking a -1.3% to -13.15% loss!
     * Holding the day after comes with great risk
+
+The name of the game is **intraday** money movement, why focus on open and close when there is potentially greater opportunity throughout the day? Let us take a closer look by focusing on the **High of Day** mark versus the open price for the same three days around the event. Still looking at the **3.64% overnight gap** referred to as an event. 
+
+**($High of Day - $Open) / $Open x 100**
+
+![Graph $High of Day vs $open](https://github.com/chuck1l/capstone_one/blob/master/img/graph_%25_hi_open.png)
+
+Very interesting. Every scenario can provide a meaningful return averaging around 3% from just the open price to the high of day. Putting this into a perspective of earnings potential:
+
+Minimum account size for a day trader, using a broker based in the United States, is $25,000 to satisfy the SEC Pattern Day Trading rule. The SEC Pattern Day Trading rule states that a trader must maintain a minimum of $25,000 account size if he/she plans to execute greater than 3 day trades in any given five-day period (weekends and holidays don't count) using a margin account. You have greater buying power with a margin account but let's say you only trade the $25,000 balance: Current market value of $SPXL = $48.00
+* $25,000 @ $48/share = ~ 520 shares of $SPXL
+* 3% increase is $1.44 / share
+* $1.44 x 520 shares = $749 profit for the day  
+* Identifying 2 or 3 trades per week could return $80,000 to $120,000 yearly if you only hit the 3% mark
+* Maximize profits, don't stop at 3% if the momentum is still in your favor
+* Remember that is minimum account size, 3% was only the average, could be much larger
+* Double or triple conservatively
+
