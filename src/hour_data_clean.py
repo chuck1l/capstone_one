@@ -1,6 +1,9 @@
 import numpy as np  
 import pandas as pd 
 from datetime import datetime
+import matplotlib.pyplot as plt 
+plt.rcParams.update({'font.size': 16})
+import scipy.stats as stats
 
 class HourDataCleaning:
     def __init__(self, name, data):
@@ -29,12 +32,55 @@ class HourDataCleaning:
 
     def new_date_col(self):
         self.df['date2'] = self.df['date'].astype(str).str.slice(0, 10)
-        self.df['time_of_day'] = self.df['date'].astype(str).str.slice(12, -3)    
+        self.df['time_of_day'] = self.df['date'].astype(str).str.slice(11, 13)
+        self.df['time_of_day'] = self.df['time_of_day'].astype(float)   
+        self.df['time_of_day'] = self.df['time_of_day'].sub(4.5)
 
 
     # Saving my new dataframe to the data directory
     def write_to_csv(self, location):
         self.df.to_csv(location)
+
+class HistogramHourData(object):
+    def __init__(self, name, data):
+        self.name = name
+        self.df = data
+
+    def plot_data(self, title, col):
+        minimum = min(self.df[col])
+        maximum = max(self.df[col])
+        mu = np.mean(self.df[col])
+        std = np.std(self.df[col])
+
+        fig, ax = plt.subplots(figsize=(12, 5))
+        ax.hist(self.df[col], bins=50, density=True, color='green', alpha=0.5,
+                label=f'Time of Day')
+        ax.set_title(title)
+        ax.set_xlim(minimum, maximum)
+        ax.set_xlabel('Time At High of Day')
+        ax.set_ylabel('Density')
+
+        
+        percent_change_model = stats.norm(mu, std)
+
+        t = np.linspace(minimum, maximum, num=200)
+        ax.plot(t, percent_change_model.pdf(t), linewidth=2, color='black',
+                label='Normal PDF')
+
+        time_05 = percent_change_model.ppf(0.05)
+        time_95 = percent_change_model.ppf(0.95)
+        ax.axvline(time_05, color='red', linestyle='--', linewidth=1,
+             label=f'Lower 5%: {round(time_05, 2)}%')
+        ax.axvline(time_95, color='red', linestyle='--', linewidth=1,
+            label=f'Upper 5%: {round(time_95, 2)}%')
+        ax.axvline(mu, color='black', linestyle='--', linewidth=1,
+            label=f'Mean: {round(mu, 2)}%')
+            
+
+        ax.legend(loc='upper right')
+        plt.tight_layout()
+        #plt.savefig(f'../img/{self.name}.png')
+        plt.show()
 
 
 if __name__ == "__main__":
@@ -45,6 +91,14 @@ if __name__ == "__main__":
 
     day_of_events_max = day_of_events.loc[mask_event_max]
     day_of_events_min = day_of_events.loc[mask_event_min]
+
+    graph_events_max = HistogramHourData('graph_events_max', day_of_events_max)
+    title = 'Time of Day That Coincide With High of Day'
+    col = 'time_of_day'
+
+    graph_events_max.plot_data(title, col)
+
+
 
     all_days = pd.read_csv('../data/spxl_alldays_1h.csv')
     mask_all_max = all_days.groupby(['date2'])['high'].idxmax()
@@ -64,11 +118,12 @@ if __name__ == "__main__":
     # spxl_data_1h.rename_columns()
     # spxl_data_1h.date_format()
     # spxl_data_1h.new_date_col()
+    # spxl_data_1h.df = spxl_data_1h.df[19:]
 
     # mask = spxl_data_1h.df['date2'].isin(date_lst)
 
     # spxl_eventdays_1h = spxl_data_1h.df[mask]
-    # print(spxl_eventdays_1h.head())
+    # #print(spxl_eventdays_1h.info())
 
-    # location = r'../data/spxl_alldays_1h.csv'
-    # spxl_data_1h.df.to_csv(location)
+    # location = r'../data/spxl_eventdays_1h.csv'
+    # spxl_eventdays_1h.to_csv(location)

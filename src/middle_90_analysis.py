@@ -69,7 +69,7 @@ class HistogramMiddleNinety():
 
         ax.legend(loc='upper right')
         plt.tight_layout()
-        plt.savefig(f'../img/{self.name}.png')
+        #plt.savefig(f'../img/{self.name}.png')
         #dplt.show()
 
 
