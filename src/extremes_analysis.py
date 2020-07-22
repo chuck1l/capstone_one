@@ -16,8 +16,10 @@ class ThreeDayEvents(object):
         open_p = self.df['open']
         close_p = self.df['close']
         hofd = self.df['high']
+        lofd = self.df.loc[:, 'low']
         self.df['day_o_c_delta%'] = ((close_p - open_p) / open_p) * 100
         self.df['hofd_o_delta%'] = ((hofd - open_p) / open_p) * 100
+        self.df['hofd_lofd_delta%'] = ((hofd - lofd) / lofd) * 100 
 
 
     def remove_extra_cols(self):
@@ -31,12 +33,14 @@ class ThreeDayEvents(object):
         self.df['y_rel_vol'] = self.df['relative_vol'].shift(periods=-1)
         self.df['y_o_c_delta%'] = self.df['day_o_c_delta%'].shift(periods=-1)
         self.df['y_hofd_o_delta%'] = self.df['hofd_o_delta%'].shift(periods=-1)
+        self.df['y_hofd_lofd_delta%'] = self.df['hofd_lofd_delta%'].shift(periods=-1)
 
         # Add tomorrow's information on same row
         self.df['tm_rsi'] = self.df['rsi'].shift(periods=1)
         self.df['tm_rel_vol'] = self.df['relative_vol'].shift(periods=1)
         self.df['tm_o_c_delta%'] = self.df['day_o_c_delta%'].shift(periods=1)
         self.df['tm_hofd_o_delta%'] = self.df['hofd_o_delta%'].shift(periods=1)
+        self.df['tm_hofd_lofd_delta%'] = self.df['hofd_lofd_delta%'].shift(periods=1)
 
 
 if __name__ == "__main__":
@@ -56,11 +60,11 @@ if __name__ == "__main__":
     df_events_pos = spxl.df[spxl_mask_pos]
     df_events_neg = spxl.df[spxl_mask_neg]
 
-    location = r'../data/df_gt_3.64.csv'
-    df_events_pos.to_csv(location)
+    location1 = r'../data/df_gt_3.64.csv'
+    df_events_pos.to_csv(location1)
 
-    location = r'../data/df_lt_n3.43.csv'
-    df_events_neg.to_csv(location)
+    location2 = r'../data/df_lt_n3.43.csv'
+    df_events_neg.to_csv(location2)
 
     
     

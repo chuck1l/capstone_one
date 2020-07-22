@@ -118,3 +118,5 @@ We can see that even when overnight action is positive, but less than or equal t
 
 A more concerning concept is that you would really have to capture the high of day point to create acceptable profit. The high of day versus open price mean difference is only 1.21% with a much lower probability of realizing a move greater than 3%.
 
+### _**What Would The Return Look Like High of Day Versus Low of Day Post Catalyst**_
+
