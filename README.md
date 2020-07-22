@@ -119,7 +119,7 @@ A more concerning concept is that you would really have to capture the high of d
 
 ### _**What Would The Return Look Like High of Day Versus Low of Day**_
 
-![hofd vs lofd non-cat]()
-![hofd vs lofd w/ cat]()
+![hofd vs lofd non-cat](https://github.com/chuck1l/capstone_one/blob/master/img/graph_pos_45_hofd_lofd.png)
+![hofd vs lofd w/ cat](https://github.com/chuck1l/capstone_one/blob/master/img/graph_%25_hiofd_lowofd.png)
 
 These illustrations scream potential, even on the days that don't follow an extreme condition from the day before. The trick will be identify metrics to lockdown a near low of day entry and taking profits toward the high of day. The main focus should still be centered on days that follow a precipitous gapper, but considerable opportunity for scalping on slower days exists.
