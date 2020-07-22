@@ -98,12 +98,23 @@ Minimum account size for a day trader, using a broker based in the United States
 
 The EDA up to this point has raised new questions to further analyze:
 * What does daily action look like when not impacted with a catalyzing event?
-* Why enter a position at the open price?
 * What would the return look like **High of Day** versus **Low of Day**?
+* Why enter a position at the open price?
 * Can we identify a repeatable method of entering a position closer to the **Low of Day**?
 * Does the **Low of Day** and **High of Day** repeat at a certain time of the day?
 * Could volume metrics preceed price movement to forecast the future action?
 
 ## _**The Answers:**_
 
-### _**Daily Action Without A Catalyzing Driving Volatility**_
+### _**Daily Action Without A Catalyst Driving Volatility**_
+
+The original graph from this presentation illustrates the fact that we are searching for elevated volatility in a day following an extreme condition from the previous day. Now, this is the case because the SEC strongly suggests that news is released outside of normal market hours. Thus, post-market and futures activity create an overnight gap. Our trigger for attention. Through the EDA colored lens, the next two illustrations offer more insight into that concept.
+
+![mid-90 $close vs $open](https://github.com/chuck1l/capstone_one/blob/master/img/graph_pos_45_op_cl.png)
+
+We can see that even when overnight action is positive, but less than or equal to 2%, our potential profit for holding throughout the day is restrained. Perhaps intuitively 90% of the data lies within less than 3%, centered greatly around zero, and has an equal likelihood of turning negative. Very difficult to forecast the direction of price action, and minimal ROI if you can't capture the entire move.  
+
+![mid-90 $hofd vs $open](https://github.com/chuck1l/capstone_one/blob/master/img/graph_pos_45_hofd_op.png)
+
+A more concerning concept is that you would really have to capture the high of day point to create acceptable profit. The high of day versus open price mean difference is only 1.21% with a much lower probability of realizing a move greater than 3%.
+
