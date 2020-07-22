@@ -99,7 +99,6 @@ Minimum account size for a day trader, using a broker based in the United States
 The EDA up to this point has raised new questions to further analyze:
 * What does daily action look like when not impacted with a catalyzing event?
 * What would the return look like **High of Day** versus **Low of Day**?
-* Why enter a position at the open price?
 * Can we identify a repeatable method of entering a position closer to the **Low of Day**?
 * Does the **Low of Day** and **High of Day** repeat at a certain time of the day?
 * Could volume metrics preceed price movement to forecast the future action?
@@ -118,5 +117,9 @@ We can see that even when overnight action is positive, but less than or equal t
 
 A more concerning concept is that you would really have to capture the high of day point to create acceptable profit. The high of day versus open price mean difference is only 1.21% with a much lower probability of realizing a move greater than 3%.
 
-### _**What Would The Return Look Like High of Day Versus Low of Day Post Catalyst**_
+### _**What Would The Return Look Like High of Day Versus Low of Day**_
 
+![hofd vs lofd non-cat]()
+![hofd vs lofd w/ cat]()
+
+These illustrations scream potential, even on the days that don't follow an extreme condition from the day before. The trick will be identify metrics to lockdown a near low of day entry and taking profits toward the high of day. The main focus should still be centered on days that follow a precipitous gapper, but considerable opportunity for scalping on slower days exists.

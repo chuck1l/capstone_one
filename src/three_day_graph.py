@@ -31,9 +31,6 @@ class ThreeGraphPlot:
         mu2 = np.mean(self.df[col2])
         mu3 = np.mean(self.df[col3])
 
-        print(maximum)
-        print(minimum3)
-
         fig, ax = plt.subplots(3, 1, figsize=(15, 7))
 
         # Plot the day before the event
@@ -43,7 +40,7 @@ class ThreeGraphPlot:
                 label=f'Avg: {round(mu1, 2)}%')
         ax[1].set_xlim(minimum, maximum)
         ax[1].set_ylabel('Density')
-        ax[1].legend(loc='upper left')
+        ax[1].legend(loc='upper right')
 
         # Plot the day of the event
         ax[0].hist(self.df[col2], bins=20, density=True, color='green', alpha=.70,
@@ -53,7 +50,7 @@ class ThreeGraphPlot:
         ax[0].set_title(title)
         ax[0].set_xlim(minimum, maximum)
         ax[0].set_ylabel('Density')
-        ax[0].legend(loc='upper left')
+        ax[0].legend(loc='upper right')
 
         # Plot the day after the event
         ax[2].hist(self.df[col3], bins=20, density=True, color='green', alpha=.70,
@@ -61,14 +58,14 @@ class ThreeGraphPlot:
         ax[2].axvline(mu3, color='black', linestyle='--', linewidth=1,
                 label=f'Avg: {round(mu3, 2)}%')
         ax[2].set_xlim(minimum, maximum)
-        ax[2].set_xlabel('% Delta Close vs. Open')
+        ax[2].set_xlabel('% Delta High of Day vs. Low of Day')
         ax[2].set_ylabel('Density')
-        ax[2].legend(loc='upper left')
+        ax[2].legend(loc='upper right')
 
         
         fig.tight_layout()
         #plt.show()
-        #plt.savefig(f'../img/{self.name}.png')
+        plt.savefig(f'../img/{self.name}.png')
 
 
 if __name__ == "__main__":   
@@ -76,22 +73,19 @@ if __name__ == "__main__":
     data_pos = pd.read_csv('../data/df_gt_3.64.csv')
     pos_data = ThreeGraphPlot('graph_%_op_clo', data_pos)
 
-    day_of_price = 'day_o_c_delta%'
-    day_bf_price = 'y_o_c_delta%'
-    day_af_price = 'tm_o_c_delta%'
+    day_of_price = 'hofd_lofd_delta%'
+    day_bf_price = 'y_hofd_lofd_delta%'
+    day_af_price = 'tm_hofd_lofd_delta%'
 
-    title = 'Comparing Price Change Close vs. Open For 3 days Around Event'
+    title = 'Comparing Price Change High of Day vs. Low of Day For 3 days Around Event'
+
+    pos_data = ThreeGraphPlot('graph_%_hiofd_lowofd', data_pos)
+
+    day_of_price = 'hofd_lofd_delta%'
+    day_bf_price = 'y_hofd_lofd_delta%'
+    day_af_price = 'tm_hofd_lofd_delta%'
 
     pos_data.plot_data(day_of_price, day_bf_price, day_af_price, title)
-
-    # pos_data = ThreeGraphPlot('graph_%_hi_open', data_pos)
-
-    # day_of_price = 'hofd_o_delta%'
-    # day_bf_price = 'y_hofd_o_delta%'
-    # day_af_price = 'tm_hofd_o_delta%'
-
-    # title = 'Comparing Price Change High of Day vs. Open For 3 days Around Event'
-    # pos_data.plot_data(day_of_price, day_bf_price, day_af_price, title)
     
 
     

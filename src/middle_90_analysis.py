@@ -28,19 +28,6 @@ class MiddleNinety(object):
             '20_ema', 'volume_ma', 'atr', 'prev_close', '$_change', 'volume']
         self.df.drop(drop_cols, axis=1, inplace=True)
 
-    def shift_rows_add_cols(self):
-        # Add yesterday's information on same row
-        self.df['y_rsi'] = self.df['rsi'].shift(periods=-1)
-        self.df['y_rel_vol'] = self.df['relative_vol'].shift(periods=-1)
-        self.df['y_o_c_delta%'] = self.df['day_o_c_delta%'].shift(periods=-1)
-        self.df['y_hofd_o_delta%'] = self.df['hofd_o_delta%'].shift(periods=-1)
-
-        # Add tomorrow's information on same row
-        self.df['tm_rsi'] = self.df['rsi'].shift(periods=1)
-        self.df['tm_rel_vol'] = self.df['relative_vol'].shift(periods=1)
-        self.df['tm_o_c_delta%'] = self.df['day_o_c_delta%'].shift(periods=1)
-        self.df['tm_hofd_o_delta%'] = self.df['hofd_o_delta%'].shift(periods=1)
-
 class HistogramMiddleNinety():
     def __init__(self, name, data):
         self.name = name
@@ -60,7 +47,7 @@ class HistogramMiddleNinety():
                 label=f'% of Price Change')
         ax.set_title(title)
         ax.set_xlim(minimum, maximum)
-        ax.set_xlabel('% Delta High of Day vs. Open')
+        ax.set_xlabel('% Delta High of Day vs. Low of Day')
         ax.set_ylabel('Density')
 
         
@@ -82,8 +69,8 @@ class HistogramMiddleNinety():
 
         ax.legend(loc='upper right')
         plt.tight_layout()
-        #plt.savefig(f'../img/{self.name}.png')
-        plt.show()
+        plt.savefig(f'../img/{self.name}.png')
+        #dplt.show()
 
 
 if __name__ == "__main__":
@@ -102,12 +89,12 @@ if __name__ == "__main__":
     data_reduced_pos_45 = spxl_mid_90.df[mask_pos]
     data_reduced_neg_45 = spxl_mid_90.df[mask_neg]
 
-    # graph_pos_45 = HistogramMiddleNinety('graph_pos_45_hofd_op', data_reduced_pos_45)
+    graph_pos_45 = HistogramMiddleNinety('graph_pos_45_hofd_lofd', data_reduced_pos_45)
 
-    # title = 'Comparing Price Change High of Day vs. Open For Non-Catalyst Days'
-    # col_pos = 'hofd_o_delta%'
+    title = 'Comparing Price Change High of Day vs. Low of Day For Non-Catalyst Days'
+    col_pos = 'hofd_lofd_delta%'
 
-    # graph_pos_45.plot_data(title, col_pos)
+    graph_pos_45.plot_data(title, col_pos)
 
 
 
