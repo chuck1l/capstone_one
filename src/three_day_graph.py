@@ -31,6 +31,9 @@ class ThreeGraphPlot:
         mu2 = np.mean(self.df[col2])
         mu3 = np.mean(self.df[col3])
 
+        print(maximum)
+        print(minimum3)
+
         fig, ax = plt.subplots(3, 1, figsize=(15, 7))
 
         # Plot the day before the event
@@ -65,7 +68,7 @@ class ThreeGraphPlot:
         
         fig.tight_layout()
         #plt.show()
-        plt.savefig(f'../img/{self.name}.png')
+        #plt.savefig(f'../img/{self.name}.png')
 
 
 if __name__ == "__main__":   
@@ -89,7 +92,7 @@ if __name__ == "__main__":
 
     # title = 'Comparing Price Change High of Day vs. Open For 3 days Around Event'
     # pos_data.plot_data(day_of_price, day_bf_price, day_af_price, title)
-
+    
 
     
 

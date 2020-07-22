@@ -52,5 +52,26 @@ I first created three new columns in my dataframe. The prior day's closing price
 
 #### _**The Initial View of These Two Data Sets**_
 
+We don't gain much insight from this view, just noticing the frequency of events outside of the threshold.
+
 ![Graph Less Than -3.43%](https://github.com/chuck1l/capstone_one/blob/master/img/spxl_lt_n3.43%25.png)
 ![Graph Greater Than 3.64%](https://github.com/chuck1l/capstone_one/blob/master/img/spxl_gt_3.64%25.png)
+
+As human nature tends to lead us, lets focus on the positive events first.  Those days that had a catalyzing event leading to greater than or equal to a **3.64% overnight gap** (due to after hours and futures trading).
+
+At first glance, we looked at the percent of change from the open mark versus the closing - for 3 days. The day before the event, day of the event, and then the day after the event. **($ close - $ open) / $ open** 
+
+![Graph $close vs $open](https://github.com/chuck1l/capstone_one/blob/master/img/graph_%25_op_clo.png)
+
+This graph tells me very important information. Remembering that I am looking to be right more than 50% of the time, there is another caveat, the move must be substantial enough for decent profit on that correctnes. Learning: If I hold a position from open to close.
+1. The day before has an average of negative price change.
+    * Thats okay, we can't see the future.
+    * Seeing an almost even split between positive and negative action suggests people acting on impending catalyst evenly.
+    * Some are right, some are wrong
+2. Holding the day of would produce a win on average.
+    * Between 0.7% and 13.6% gain over half of the time.
+    * Acceptable, but we can do better
+    * With a mean of 0.7% we are very close to 0% gain or loss, stop losses are paramount
+3. The day after seems to pull back over 50% of the time.
+    * Risking a -1.3% to -13.15% loss!
+    * Holding the day after comes with great risk
