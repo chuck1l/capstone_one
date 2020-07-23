@@ -123,3 +123,38 @@ A more concerning concept is that you would really have to capture the high of d
 ![hofd vs lofd w/ cat](https://github.com/chuck1l/capstone_one/blob/master/img/graph_%25_hiofd_lowofd.png)
 
 These illustrations scream potential, even on the days that don't follow an extreme condition from the day before. The trick will be identifying metrics to lockdown a near low of day entry and taking profits toward the high of day. The main focus should still be centered on days that follow a precipitous gapper, but considerable opportunity for scalping on slower days exists.
+
+### _**Repeating High of Day and Low of Day at Specific Times in the Day**_
+
+#### _Times are in Eastern Standard Time - Correlating with the east coast stock exchange locations - Mountain Standard Time 0730 to 1330_
+![time for h of d, all](https://github.com/chuck1l/capstone_one/blob/master/img/graph_alldays_max_time.png)
+
+Clearly most of the action happens in the early morning or the end of the market day. The high of day tends to lean toward the end of the day a little bit. The early morning high of day could be skewed by the days that the market trends downward all day.
+
+Needs further analysis:
+* Break up by day for more precision. Does the market buy up or sell off on Friday, perhaps?
+* Break up by starting lower or starting higher vis-a-vis prior trading days.
+* There is potential here, I would/will investigate further when time allows.
+
+![time for l of d, all](https://github.com/chuck1l/capstone_one/blob/master/img/graph_alldays_min_time.png)
+
+The same discovery for the low of day analysis. Trends toward the early morning, some elevated occurrences at the closing bell.
+
+Nees further analysis:
+* Why sell off in the morning?
+* Why sell off in the evening?
+* Can we predict each?
+* MVP ++
+
+### _**Volume Analysis Surrounding the Historical Catalyst Events**_
+
+I randomly selected 6 of the events that contributed to a greater than 3.64% gap during overnight trading (post-market, futures and pre-market). Taking a look at 11 days total, but the ten surrounding the event. Five before, five after.
+
+#### _Times are in Eastern Standard Time - Correlating with the east coast stock exchange locations - Mountain Standard Time 0730 to 1330_
+
+![2011-03-17](https://github.com/chuck1l/capstone_one/blob/master/img/ten_day_chars/graph2011-03-17.png)
+![2012-01-03](https://github.com/chuck1l/capstone_one/blob/master/img/ten_day_chars/graph2012-01-03.png)
+![2014-12-18](https://github.com/chuck1l/capstone_one/blob/master/img/ten_day_chars/graph2014-12-18.png)
+![2016-11-07](https://github.com/chuck1l/capstone_one/blob/master/img/ten_day_chars/graph2016-11-07.png)
+![2018-04-10](https://github.com/chuck1l/capstone_one/blob/master/img/ten_day_chars/graph2018-04-10.png)
+![2020-04-07](https://github.com/chuck1l/capstone_one/blob/master/img/ten_day_chars/graph2020-04-07.png)
