@@ -4,6 +4,7 @@ from datetime import datetime
 import matplotlib.pyplot as plt 
 plt.rcParams.update({'font.size': 16})
 import scipy.stats as stats
+plt.style.use('ggplot')
 
 class HourDataCleaning:
     def __init__(self, name, data):
@@ -67,9 +68,12 @@ class HistogramHourData(object):
         plt.show()
 
 
+
 if __name__ == "__main__":
 
     day_of_events = pd.read_csv('../data/spxl_eventdays_1h.csv')
+    events_scat_matr.scatter_matrices()
+
     mask_event_max = day_of_events.groupby(['date2'])['high'].idxmax()
     mask_event_min = day_of_events.groupby(['date2'])['low'].idxmin()
 
@@ -89,23 +93,23 @@ if __name__ == "__main__":
 
     graph_events_min.plot_data(title, col)
 
-    # data = pd.read_csv('../data/df_gt_3.64.csv')
-    # spxl_data_1h = HourDataCleaning('spxl_1h', '../data/spxl_1h_raw.csv')
+    data = pd.read_csv('../data/df_gt_3.64.csv')
+    spxl_data_1h = HourDataCleaning('spxl_1h', '../data/spxl_1h_raw.csv')
 
-    # date_lst = []
-    # for row in data['date']:
-    #     date_lst.append(row[:10])
+    date_lst = []
+    for row in data['date']:
+        date_lst.append(row[:10])
 
-    # spxl_data_1h.remove_na_cols()
-    # spxl_data_1h.rename_columns()
-    # spxl_data_1h.date_format()
-    # spxl_data_1h.new_date_col()
-    # spxl_data_1h.df = spxl_data_1h.df[19:]
+    spxl_data_1h.remove_na_cols()
+    spxl_data_1h.rename_columns()
+    spxl_data_1h.date_format()
+    spxl_data_1h.new_date_col()
+    spxl_data_1h.df = spxl_data_1h.df[19:]
 
-    # mask = spxl_data_1h.df['date2'].isin(date_lst)
+    mask = spxl_data_1h.df['date2'].isin(date_lst)
 
-    # spxl_eventdays_1h = spxl_data_1h.df[mask]
-    # #print(spxl_eventdays_1h.info())
+    spxl_eventdays_1h = spxl_data_1h.df[mask]
+    #print(spxl_eventdays_1h.info())
 
-    # location = r'../data/spxl_eventdays_1h.csv'
-    # spxl_eventdays_1h.to_csv(location)
+    location = r'../data/spxl_eventdays_1h.csv'
+    spxl_eventdays_1h.to_csv(location)
