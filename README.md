@@ -158,3 +158,25 @@ I randomly selected 6 of the events that contributed to a greater than 3.64% gap
 ![2016-11-07](https://github.com/chuck1l/capstone_one/blob/master/img/ten_day_chars/graph2016-11-07.png)
 ![2018-04-10](https://github.com/chuck1l/capstone_one/blob/master/img/ten_day_chars/graph2018-04-10.png)
 ![2020-04-07](https://github.com/chuck1l/capstone_one/blob/master/img/ten_day_chars/graph2020-04-07.png)
+
+This is the most exciting discovery up to this point. The illustrations enfold completely around my mind as I cognitively sprint through the potential. Much further analysis is needed but we can clearly see a repeatable trend in almost all cases, easily 83% of the samples display commonality. Only one day breaks off from the group - the day of 2016-11-07. We need to look more than 5 days past the event to see if the 2016 date complies on the days to come.
+
+## _**Conclusion:**_
+
+The data seems to tell us that a statistical signifigance exists in market action. People are working together, very possibly unknowingly, by using common idicators and other metrics for real-time market analysis. There is definitely more to gain when you follow an instrument that has recently experienced a catalyzing event. Remember when I mentioned Volume, Volatility and Liquidity in the beginning? These require the security in question to gain attention of traders, both retail and institutional alike. There events create that attention which produces a side-effect of volume, volatility and liquidity.
+
+Through this EDA, we have identified two compelling concepts that demand further analysis. Unfortunately, due to constrained time, I was only capable of achieving MVP+ in noticing the three major results from this study.
+
+1. Catalyst events create greater opportunity
+2. It seems that the large majority of the action is start or end of market day
+    * Need to break this down much more to realize additional contributions to which direction and why
+3. The days preceding an event are accompanied with unusual market volume activity
+    * Insider trading?
+    * Trigger for attention!
+    * Market movers?
+4. The days following an event experience continued price action that can be capitalized easily even as volume erodes
+    * How much movement and the probabilities surrounding?
+    * Is fear of missing out (FOMO) driving this activity?
+    * MVP++/MVP+++
+
+I will continue to analyze this as my knowledge of these tools expands. Applying more statistical analysis and answering more questions! Can I train the machine to learn this concept? Does similar activity exist on red days?
