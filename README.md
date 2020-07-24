@@ -19,6 +19,12 @@ and last, but certianly not least:
 
 Before we submerge ourselves in the complexity that is the world of highly technical indicators, our EDA will focus on the basics. Often people think the basics aren't enough to improve upon the current win-ratio. I am here to argue that we will accomplish just that with a focused incorporation and analysis of invaluable elements. We will let exploratory data analysis and automated processes do the heavy lifting in the technicals, allowing more time to focus on discipline and emotional intelligence for the win.
 
+## _**Hypothesis**_
+
+**Ho:** Price action is random, there is no ascertainable consistency in indication/prediction.
+
+**Ha:** This EDA will identify higher probability trends that can improve a win-ratio (>50%)
+
 ## _**The Data:**_ 
 
 My initial data has been sourced from the TradingView platform. Their organization is a social platform for traders and investors interested in improving investing skills and maximizing profits.  Providing top-of-the-line charting software, trade ideas, and live quotes. They have free services but in my case paid for to achieve the best real-time, accurate data. TradingView offers the added benefit of being able to export data for the paying customers. The initial analysis is looking at the historical action of an Exchange Traded Fund (ETF) that closely follows the S&P 500 market index. Direxion Daily S&P 500 Bull ($SPXL). It is a very good instrument for traders looking to hold their positions on a short leash, too high of an expense ratio for long-term durations. I chose this ETF because that is the driving force in my strategy, therefore looking to better understand the short-term indication via exploratory data analysis.
