@@ -150,8 +150,6 @@ Nees further analysis:
 
 I randomly selected 6 of the events that contributed to a greater than 3.64% gap during overnight trading (post-market, futures and pre-market). Taking a look at 11 days total, but the ten surrounding the event. Five before, five after.
 
-#### _Times are in Eastern Standard Time - Correlating with the east coast stock exchange locations - Mountain Standard Time 0730 to 1330_
-
 ![2011-03-17](https://github.com/chuck1l/capstone_one/blob/master/img/ten_day_chars/graph2011-03-17.png)
 ![2012-01-03](https://github.com/chuck1l/capstone_one/blob/master/img/ten_day_chars/graph2012-01-03.png)
 ![2014-12-18](https://github.com/chuck1l/capstone_one/blob/master/img/ten_day_chars/graph2014-12-18.png)
